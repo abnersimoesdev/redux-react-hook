@@ -1,7 +1,7 @@
 import { css } from "emotion";
 import * as React from "react";
-import TodoInput from "./TodoInput";
-import TodoList from "./TodoList";
+import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
 
 export default function App() {
   return (

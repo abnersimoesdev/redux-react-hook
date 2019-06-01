@@ -1,25 +1,25 @@
 import { css } from "emotion";
 import * as React from "react";
 import { useDispatch, useMappedState } from "redux-react-hook";
-import { IStateInterface } from "../store";
+import { AppState } from "../store/types";
+import { deleteTodo } from "../store/actions";
 
 export default function TodoItem({ index }: { index: number }) {
-  const mapState = React.useCallback(
-    (state: IStateInterface) => state.todos[index],
-    [index]
-  );
+  const mapState = React.useCallback((state: AppState) => state.todos[index], [
+    index
+  ]);
   const todo = useMappedState(mapState);
 
   const dispatch = useDispatch();
-  const deleteTodo = React.useCallback(
-    () => dispatch({ type: "delete todo", index }),
-    [dispatch, index]
-  );
+  const onDelete = React.useCallback(() => dispatch(deleteTodo(index)), [
+    dispatch,
+    index
+  ]);
 
   return (
     <li className={styles.root}>
       <span>{todo}</span>
-      <button onClick={deleteTodo}>Delete</button>
+      <button onClick={onDelete}>Delete</button>
     </li>
   );
 }
