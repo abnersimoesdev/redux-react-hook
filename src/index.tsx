@@ -4,7 +4,7 @@ import { StoreContext } from "redux-react-hook";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { makeStore } from "./Store";
+import { makeStore } from "./store";
 
 const store = makeStore();
 

@@ -1,7 +1,7 @@
 import { css } from "emotion";
 import * as React from "react";
 import { useMappedState } from "redux-react-hook";
-import { IStateInterface } from "./Store";
+import { IStateInterface } from "../store";
 import TodoItem from "./TodoItem";
 
 const mapState = (state: IStateInterface) => ({

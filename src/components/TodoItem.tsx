@@ -1,7 +1,7 @@
 import { css } from "emotion";
 import * as React from "react";
 import { useDispatch, useMappedState } from "redux-react-hook";
-import { IStateInterface } from "./Store";
+import { IStateInterface } from "../store";
 
 export default function TodoItem({ index }: { index: number }) {
   const mapState = React.useCallback(

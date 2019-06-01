@@ -1,7 +1,7 @@
-import { Action, IState } from "./Store";
+import { Action, IStateInterface } from "./";
 
 export default function reducer(
-  state: IState | null | undefined,
+  state: IStateInterface | null | undefined,
   action: Action
 ) {
   if (!state) {
