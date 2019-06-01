@@ -1,4 +1,5 @@
-import { Action, createStore } from "redux";
+import { Action, createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import reducer from "./reducer";
 
 export interface IState {
@@ -17,13 +18,17 @@ export type Action =
     };
 
 export function makeStore() {
-  return createStore(reducer, {
-    lastUpdated: 0,
-    todos: [
-      "Make the fire!",
-      "Fix the breakfast!",
-      "Wash the dishes!",
-      "Do the mopping!"
-    ]
-  });
+  return createStore(
+    reducer,
+    {
+      lastUpdated: 0,
+      todos: [
+        "Make the fire!",
+        "Fix the breakfast!",
+        "Wash the dishes!",
+        "Do the mopping!"
+      ]
+    },
+    composeWithDevTools(applyMiddleware())
+  );
 }
