@@ -2,9 +2,9 @@ import { css } from "emotion";
 import * as React from "react";
 import { useMappedState } from "redux-react-hook";
 import TodoItem from "./TodoItem";
-import { AppState } from "../store/types";
+import { AppStateType } from "../store/reducers/types";
 
-const mapState = (state: AppState) => ({
+const mapState = (state: AppStateType) => ({
   lastUpdated: state.lastUpdated,
   todoCount: state.todos.length
 });

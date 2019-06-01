@@ -1,13 +1,14 @@
 import { css } from "emotion";
 import * as React from "react";
 import { useDispatch, useMappedState } from "redux-react-hook";
-import { AppState } from "../store/types";
+import { AppStateType } from "../store/reducers/types";
 import { deleteTodo } from "../store/actions";
 
 export default function TodoItem({ index }: { index: number }) {
-  const mapState = React.useCallback((state: AppState) => state.todos[index], [
-    index
-  ]);
+  const mapState = React.useCallback(
+    (state: AppStateType) => state.todos[index],
+    [index]
+  );
   const todo = useMappedState(mapState);
 
   const dispatch = useDispatch();
